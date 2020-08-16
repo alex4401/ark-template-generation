@@ -18,7 +18,7 @@ def run(source_filename: str, filter_filename: str):
     game_version = species['version']
     species = species['species']
     
-    species.sort(key=lambda entry: entry['name'])
+    species.sort(key=lambda dino_data: dino.get_descriptive_name(flt, dino_data))
     validate(species, contains_range=flt.dinoClasses, of=blueprint.get_class_name)
 
     results = dict()
