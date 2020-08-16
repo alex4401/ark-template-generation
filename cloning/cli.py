@@ -4,7 +4,7 @@ import sys
 from typing import Dict, Any, List, Iterable
 
 from core import blueprint, dino
-from core.file import load_json, query
+from core.file import load_json, query, validate
 from core.filter import load_filter
 from .const import DinoData, CLONING_SECTION, \
                    BASE_COST, LEVEL_COST, BASE_TIME, LEVEL_TIME
@@ -14,16 +14,16 @@ def run(source_filename: str, filter_filename: str):
     species = load_json(source_filename)
     
     flt = load_filter(filter_filename)
-    limits = flt.dinoClasses
 
     game_version = species['version']
     species = species['species']
     
     species.sort(key=lambda entry: entry['name'])
+    validate(species, contains_range=flt.dinoClasses, of=blueprint.get_class_name)
 
     results = dict()
     for dino_data in query(species,
-                           dict(where=blueprint.get_class_name, contained_in=limits),
+                           dict(where=blueprint.get_class_name, contained_in=flt.dinoClasses),
                            dict(where=CLONING_SECTION, not_null=True)):
         cloning = dino_data[CLONING_SECTION]
         cost_base = cloning[BASE_COST]

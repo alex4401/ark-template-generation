@@ -36,3 +36,19 @@ def query(data: List[JsonData], *conditions) -> Iterable[JsonData]:
         else:
             yield entry
 
+
+def validate(data: List[JsonData], contains_range=None, of=None):
+    tracker = set()
+
+    for entry in data:
+        if callable(of):
+            val = of(entry)
+        else:
+            val = entry.get(of, None)
+        tracker.add(val)
+    
+    diff = set(contains_range) - tracker
+    if diff:
+        message = 'This data cannot be used to cover the filter: following entries could not be satisfied.\n\n' \
+                  + ', '.join(diff)
+        raise ValueError(message)

@@ -10,6 +10,14 @@ filter:
         - Otter_Character_BP_C
         - Mammoth_Character_BP_C
         - Quetz_Character_BP_C
+        - Gigant_Character_BP_C
+        - Yutyrannus_Character_BP_C
+        - Argent_Character_BP_C
+        - Compy_Character_BP_C
+        - Direwolf_Character_BP_C
+        - SpiderS_Character_BP_C
+        - Megalodon_Character_BP_C
+        - Saber_Character_BP_C
 
     # Scorched Earth
         - camelsaurus_Character_BP_C
@@ -20,7 +28,7 @@ filter:
         - CaveWolf_Character_BP_C
         - LanternPug_Character_BP_C
         - LanternGoat_Character_BP_C
-        - RollRat_Character_BP_C
+        - RockDrake_Character_BP_C
 
     # Extinction
         - IceJumper_Character_BP_C
@@ -37,7 +45,7 @@ filter:
         - SpaceWhale_Character_BP_C
         - BogSpider_Character_BP_C
         - Shapeshifter_Small_Character_BP_C
-
+        
     # Crystal Isles
     # Only single wyvern, costs are the same.
         - CrystalWyvern_Character_BP_Ember_C
