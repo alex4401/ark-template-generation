@@ -3,15 +3,18 @@ import sys
 
 from typing import Dict, Any, List, Iterable
 
-from core import blueprint
-from core.file import load_json, load_strml, query
+from core import blueprint, dino
+from core.file import load_json, query
+from core.filter import load_filter
 from .const import DinoData, CLONING_SECTION, \
                    BASE_COST, LEVEL_COST, BASE_TIME, LEVEL_TIME
 
 
 def run(source_filename: str, filter_filename: str):
     species = load_json(source_filename)
-    limits = load_strml(filter_filename)
+    
+    flt = load_filter(filter_filename)
+    limits = flt.dinoClasses
 
     game_version = species['version']
     species = species['species']
@@ -29,7 +32,8 @@ def run(source_filename: str, filter_filename: str):
         time_level = cloning[LEVEL_TIME]
         
         out = (cost_base, cost_level, time_base, time_level)
-        results[dino_data['name']] = out
+        name = dino.get_descriptive_name(flt, dino_data)
+        results[name] = out
 
     print('// Version:', game_version)
     print(json.dumps(results))

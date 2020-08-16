@@ -21,4 +21,3 @@ def get_class_name(blueprint: Union[JsonData, str]) -> str:
            
         blueprint[EXT_BP_CLASS] = get_class_name(get_path(blueprint))
         return blueprint[EXT_BP_CLASS]
-

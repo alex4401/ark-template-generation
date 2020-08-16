@@ -9,10 +9,12 @@ def load_json(filename: str) -> JsonData:
     with open(filename, 'rt') as fp:
         return json.load(fp)
 
+
 def load_strml(filename: str) -> List[str]:
     with open(filename, 'rt') as fp:
         lines = fp.read().split('\n')
         return [line for line in lines if not line.startswith('#')]
+
 
 def query(data: List[JsonData], *conditions) -> Iterable[JsonData]:
     for entry in data:

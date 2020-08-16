@@ -1,0 +1,46 @@
+filter:
+    dinoClasses:
+    # Primal Earth
+        - Allo_Character_BP_C
+        - Raptor_Character_BP_C
+        - Spino_Character_BP_C
+        - Rex_Character_BP_C
+        - Dilo_Character_BP_C
+        - Dodo_Character_BP_C
+        - Otter_Character_BP_C
+        - Mammoth_Character_BP_C
+        - Quetz_Character_BP_C
+
+    # Scorched Earth
+        - camelsaurus_Character_BP_C
+        - Jerboa_Character_BP_C
+
+    # Aberration
+        - Basilisk_Character_BP_C
+        - CaveWolf_Character_BP_C
+        - LanternPug_Character_BP_C
+        - LanternGoat_Character_BP_C
+        - RollRat_Character_BP_C
+
+    # Extinction
+        - IceJumper_Character_BP_C
+        - Owl_Character_BP_C
+        - Enforcer_Character_BP_C
+        - Gacha_Character_BP_C
+        - GasBags_Character_BP_C
+        - Scout_Character_BP_C
+        - Spindles_Character_BP_C
+
+    # Genesis: Part 1
+        - GiantTurtle_Character_BP_C
+        - Cherufe_Character_BP_C
+        - SpaceWhale_Character_BP_C
+        - BogSpider_Character_BP_C
+        - Shapeshifter_Small_Character_BP_C
+
+    # Crystal Isles
+    # Only single wyvern, costs are the same.
+        - CrystalWyvern_Character_BP_Ember_C
+    
+    nameOverrides:
+        CrystalWyvern_Character_BP_Ember_C: Crystal Wyvern
