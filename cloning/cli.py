@@ -33,6 +33,10 @@ def run(source_filename: str, filter_filename: str):
         
         out = (cost_base, cost_level, time_base, time_level)
         name = dino.get_descriptive_name(flt, dino_data)
+        
+        if not flt.includeCloningTimes:
+            out = out[:2]
+        
         results[name] = out
 
     print('// Version:', game_version)

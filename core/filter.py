@@ -4,8 +4,9 @@ from typing import List, Dict
 
 class Filter:
     path: str
-    dinoClasses: List[str]
-    nameOverrides: Dict[str, str]
+    dinoClasses: List[str] = list()
+    nameOverrides: Dict[str, str] = dict()
+    includeCloningTimes: bool = True
 
 
 def load_filter(filename: str) -> List[str]:
@@ -19,7 +20,7 @@ def load_filter(filename: str) -> List[str]:
     
     for field_name in out.__annotations__.keys():
         field = doc.get(field_name, None)
-        if field:
+        if field != None:
             setattr(out, field_name, field)
     
     return out

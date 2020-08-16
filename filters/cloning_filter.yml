@@ -1,4 +1,6 @@
 filter:
+    includeCloningTimes: true
+
     dinoClasses:
     # Primal Earth
         - Allo_Character_BP_C
