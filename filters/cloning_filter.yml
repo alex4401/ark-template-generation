@@ -18,17 +18,36 @@ filter:
         - SpiderS_Character_BP_C
         - Megalodon_Character_BP_C
         - Saber_Character_BP_C
+        - Oviraptor_Character_BP_C
+        - Dunkle_Character_BP_C
+        - Hyaenodon_Character_BP_C
+        - Manta_Character_BP_C
+        - Direbear_Character_BP_C
+        - Turtle_Character_BP_C
+        - Beaver_Character_BP_C
+        - Equus_Character_BP_C
+        - Trike_Character_BP_C
+        - Para_Character_BP_C
+        - Tapejara_Character_BP_C
+        - Daeodon_Character_BP_C
 
     # Scorched Earth
         - camelsaurus_Character_BP_C
         - Jerboa_Character_BP_C
+        - Mantis_Character_BP_C
+        - Phoenix_Character_BP_C
+ 
+    # Ragnarok
+        - Griffin_Character_BP_C
 
     # Aberration
         - Basilisk_Character_BP_C
         - CaveWolf_Character_BP_C
         - LanternPug_Character_BP_C
         - LanternGoat_Character_BP_C
+        - LanternBird_Character_BP_C
         - RockDrake_Character_BP_C
+        - Crab_Character_BP_C
 
     # Extinction
         - IceJumper_Character_BP_C
@@ -38,6 +57,9 @@ filter:
         - GasBags_Character_BP_C
         - Scout_Character_BP_C
         - Spindles_Character_BP_C
+        
+    # Valguero
+        - Deinonychus_Character_BP_C
 
     # Genesis: Part 1
         - GiantTurtle_Character_BP_C
@@ -47,6 +69,7 @@ filter:
         - Shapeshifter_Small_Character_BP_C
         
     # Crystal Isles
+        - Tropeognathus_Character_BP_C
     # Only single wyvern, costs are the same.
         - CrystalWyvern_Character_BP_Ember_C
     
