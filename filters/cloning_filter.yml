@@ -31,14 +31,79 @@ filter:
         - Equus_Character_BP_C
         - Trike_Character_BP_C
         - Para_Character_BP_C
+        - Pachy_Character_BP_C
+        - Paracer_Character_BP_C
         - Tapejara_Character_BP_C
         - Daeodon_Character_BP_C
+        - Kairuku_Character_BP_C
+        - Achatina_Character_BP_C
+        - Microraptor_Character_BP_C
+        - Sheep_Character_BP_C
+        - Mosa_Character_BP_C
+        - Hesperornis_Character_BP_C
+        - Tusoteuthis_Character_BP_C
+        - Moth_Character_BP_C
+        - Ankylo_Character_BP_C
+        - Dimetro_Character_BP_C
+        - Plesiosaur_Character_BP_C
+        - Angler_Character_BP_C
+        - Phiomia_Character_BP_C
+        - Procoptodon_Character_BP_C
+        - Pachy_Character_BP_C
+        - Sarco_Character_BP_C
+        - Megalania_Character_BP_C
+        - Vulture_Character_BP_C
+        - Dolphin_Character_BP_C
+        - Doed_Character_BP_C
+        - Carno_Character_BP_C
+        - Iguanodon_Character_BP_C
+        - Kentro_Character_BP_C
+        - Bat_Character_BP_C
+        - Sauropod_Character_BP_C
+        - Archa_Character_BP_C
+        - Purlovia_Character_BP_C
+        - Ichthyornis_Character_BP_C
+        - Chalico_Character_BP_C
+        - Baryonyx_Character_BP_C
+        - Basilosaurus_Character_BP_C
+        - Dimorph_Character_BP_C
+        - Arthro_Character_BP_C
+        - Bigfoot_Character_BP_C
+        - Diplocaulus_Character_BP_C
+        - Pegomastax_Character_BP_C
+        - Moschops_Character_BP_C
+        - Stag_Character_BP_C
+        - Megalosaurus_Character_BP_C
+        - Megatherium_Character_BP_C
+        - Stego_Character_BP_C
+        - Troodon_Character_BP_C
+        - Thylacoleo_Character_BP_C
+        - Therizino_Character_BP_C
+        - Lystro_Character_BP_C
+        - Eel_Character_BP_C
+        - Scorpion_Character_BP_C
+        - Kaprosuchus_Character_BP_C
+        - TerrorBird_Character_BP_C
+        - Toad_Character_BP_C
+        - Diplodocus_Character_BP_C
+        - DungBeetle_Character_BP_C
+        - Galli_Character_BP_C
+        - Megalosaurus_Character_BP_C
+        - Monkey_Character_BP_C
+        - Ptero_Character_BP_C
+        - Pela_Character_BP_C
+        - Equus_Character_BP_Unicorn_C
+        - Moth_Character_BP_C
+        - Rhino_Character_BP_C
+        - Xenomorph_Character_BP_Male_Tamed_C
 
     # Scorched Earth
         - camelsaurus_Character_BP_C
         - Jerboa_Character_BP_C
         - Mantis_Character_BP_C
         - Phoenix_Character_BP_C
+        - SpineyLizard_Character_BP_C
+        - Wyvern_Character_BP_Fire_C
  
     # Ragnarok
         - Griffin_Character_BP_C
@@ -51,6 +116,7 @@ filter:
         - LanternBird_Character_BP_C
         - RockDrake_Character_BP_C
         - Crab_Character_BP_C
+        - RockGolem_Character_BP_C
 
     # Extinction
         - IceJumper_Character_BP_C
@@ -78,3 +144,4 @@ filter:
     
     nameOverrides:
         CrystalWyvern_Character_BP_Ember_C: Crystal Wyvern
+        Wyvern_Character_BP_Fire_C: Wyvern
