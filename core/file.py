@@ -1,13 +1,39 @@
 import json
+import re
 
 from typing import Dict, Any, List, Iterable
+from .filter import Filter
 
 JsonData = Dict[str, Any]
+
+
+# Reduce 2-12 numbers in an array onto a single line
+JOIN_MULTIPLE_NUMBERS_REGEX = re.compile(r'(\n\s+)[-+.\de]+,(?:\n\s+(?:[-+.\de"]|null)+,?){1,12}')
+
+# Reduce arrays with only a single line of content (including previously joined multiple fields) to a single line
+COLLAPSE_SINGLE_LINE_ARRAY_REGEX = re.compile(r'\[\s+(.+)\s+\]')
 
 
 def load_json(filename: str) -> JsonData:
     with open(filename, 'rt') as fp:
         return json.load(fp)
+        
+        
+def _flatten_re_result(match):
+    txt = match[0]
+    txt = re.sub(r'\s*\n\s+', '', txt)
+    txt = txt.replace(',', ', ')
+    return f'{match[1]}{txt}'
+
+
+def dump_json(flt: Filter, data: JsonData) -> str:
+    if flt.prettifyOutput:
+        result = json.dumps(data, indent='  ')
+        result = re.sub(JOIN_MULTIPLE_NUMBERS_REGEX, _flatten_re_result, result)
+        result = re.sub(COLLAPSE_SINGLE_LINE_ARRAY_REGEX, r"[ \1 ]", result)
+        return result
+    else:
+        return json.dumps(data, indent=None)
 
 
 def load_strml(filename: str) -> List[str]:

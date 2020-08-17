@@ -7,6 +7,7 @@ class Filter:
     dinoClasses: List[str] = list()
     nameOverrides: Dict[str, str] = dict()
     includeCloningTimes: bool = True
+    prettifyOutput: bool = False
 
 
 def load_filter(filename: str) -> List[str]:

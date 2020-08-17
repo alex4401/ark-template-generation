@@ -1,10 +1,9 @@
-import json
 import sys
 
 from typing import Dict, Any, List, Iterable
 
 from core import blueprint, dino
-from core.file import load_json, query, validate
+from core.file import load_json, query, validate, dump_json
 from core.filter import load_filter
 from .const import DinoData, CLONING_SECTION, \
                    BASE_COST, LEVEL_COST, BASE_TIME, LEVEL_TIME
@@ -40,5 +39,5 @@ def run(source_filename: str, filter_filename: str):
         results[name] = out
 
     print('// Version:', game_version)
-    print(json.dumps(results))
+    print(dump_json(flt, results))
 

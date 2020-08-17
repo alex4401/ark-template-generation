@@ -1,5 +1,6 @@
 filter:
     includeCloningTimes: true
+    prettifyOutput: true
 
     dinoClasses:
     # Primal Earth
