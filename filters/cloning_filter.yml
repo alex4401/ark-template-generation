@@ -139,9 +139,9 @@ filter:
         
     # Crystal Isles
         - Tropeognathus_Character_BP_C
-    # Only single wyvern, costs are the same.
+        # Only single wyvern, costs are the same.
         - CrystalWyvern_Character_BP_Ember_C
     
-    nameOverrides:
+    dinoNameOverrides:
         CrystalWyvern_Character_BP_Ember_C: Crystal Wyvern
         Wyvern_Character_BP_Fire_C: Wyvern

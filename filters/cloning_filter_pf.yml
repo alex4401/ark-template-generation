@@ -1,0 +1,23 @@
+filter:
+    includeCloningTimes: true
+    prettifyOutput: true
+    debugNames: true
+
+    modId: '839162288'
+
+    ignoreDinoBPs:
+    # Ignore dinos that are possibly copies from the core game.
+        - /Game/Mods/Primal_Fear/PrimalEarth
+        - /Game/Mods/Primal_Fear/ScorchedEarth
+        - /Game/Mods/Primal_Fear/Aberration
+        - /Game/Mods/Primal_Fear/Extinction
+        - /Game/Mods/Primal_Fear/Genesis
+
+    dinoNameOverrides:
+        Origin Carno: Origin Carnotaurus
+        Apex Dilophosaurus: Apex Dilophosaur
+        Alpha Dilophosaurus: Alpha Dilophosaur
+        NecroticWyvern_Character_BP_ZombieFire_C: Necrotic Fire Wyvern
+        NecroticWyvern_Character_BP_ZombieIce_C: Necrotic Ice Wyvern
+        NecroticWyvern_Character_BP_ZombieLightning_C: Necrotic Lightning Wyvern
+        NecroticWyvern_Character_BP_ZombiePoison_C: Necrotic Poison Wyvern
