@@ -18,11 +18,16 @@ def run(source_filename: str, filter_filename: str):
     species = species['species']
     
     species.sort(key=lambda dino_data: dino.get_descriptive_name(flt, dino_data))
-    validate(species, contains_range=flt.dinoClasses, of=blueprint.get_class_name)
+    
+    if flt.dinoClasses:
+        validate(species, contains_range=flt.dinoClasses, of=blueprint.get_class_name)
+        conditions = [dict(where=blueprint.get_class_name, contained_in=flt.dinoClasses)]
+    else:
+        conditions = [dict(where=lambda x: dino.should_skip(flt, x), equals=True)]
 
     results = dict()
     for dino_data in query(species,
-                           dict(where=blueprint.get_class_name, contained_in=flt.dinoClasses),
+                           *conditions,
                            dict(where=CLONING_SECTION, not_null=True)):
         cloning = dino_data[CLONING_SECTION]
         cost_base = cloning[BASE_COST]
