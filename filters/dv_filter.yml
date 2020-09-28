@@ -1,0 +1,4 @@
+namespace: DvJson
+filter:
+    dinoClasses:
+        - Raptor_Character_BP_C
