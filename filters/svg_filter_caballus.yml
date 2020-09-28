@@ -1,0 +1,11 @@
+import: filters/svg_filter_global.yml
+filter:
+    modId: '1679826889'
+
+    ignoreDinoBPs:
+    # Ignore dinos that are possibly copies from the core game.
+        - /Game/Mods/Cavallus/PrimalEarth
+        - /Game/Mods/Cavallus/ScorchedEarth
+        - /Game/Mods/Cavallus/Aberration
+        - /Game/Mods/Cavallus/Extinction
+        - /Game/Mods/Cavallus/Genesis

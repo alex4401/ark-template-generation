@@ -1,0 +1,26 @@
+filter:
+    ignoreDinoClasses:
+        - Gacha_Claus_Character_BP_C
+        - Dodo_Character_BP_Bunny_C
+    
+    ignoreDinoBPs:
+        # Ignore Valguero's Ice Golem in favor of main game.
+        - /Game/Mods/Valguero/Assets/Dinos/RockGolem/IceGolem/IceGolem_Character_BP
+
+    worldNameOverrides:
+        TheIslandSubMaps: The Island
+        TheCenter: The Center
+        ScorchedEarth: Scorched Earth
+        CrystalIsles: Crystal Isles
+        Genesis: Genesis Part 1
+    
+    worldNamesCSV:
+        - The Island
+        - Scorched Earth
+        - Aberration
+        - The Center
+        - Ragnarok
+        - Extinction
+        - Valguero
+        - Genesis Part 1
+        - Crystal Isles

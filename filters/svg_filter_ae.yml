@@ -1,0 +1,40 @@
+import: filters/svg_filter_global.yml
+filter:
+    modId: '893735676'
+    modNameOverride: Ark Eternal
+
+    ignoreDinoBPs:
+    # Ignore dinos that are possibly copies from the core game.
+        - /Game/Mods/AE/PrimalEarth
+        - /Game/Mods/AE/ScorchedEarth
+        - /Game/Mods/AE/Aberration
+        - /Game/Mods/AE/Extinction
+        - /Game/Mods/AE/Genesis
+    # Ignore vanilla remaps on request by EezaGeeza
+        - /Game/Mods/AE/Dinos/Vanilla
+
+    ignoreDinoClasses:
+        - Otter_Character_BP_AE_C
+        - Mantis_Character_BP_Child_C
+        - Arthro_Character_BP_Corrupt_C
+        - Carno_Character_BP_Corrupt_C
+        - Chalico_Character_BP_Corrupt_C
+        - Dilo_Character_BP_Corrupt_C
+        - Dimorph_Character_BP_Corrupt_C
+        - Gigant_Character_BP_Corrupt_C
+        - Paracer_Character_BP_Corrupt_C
+        - Ptero_Character_BP_Corrupt_C
+        - Raptor_Character_BP_Corrupt_C
+        - Xenomorph_Character_BP_Male_Tamed_Corrupt_C
+        - Rex_Character_BP_Corrupt_C
+        - RockDrake_Character_BP_Corrupt_C
+        - Spino_Character_BP_Corrupt_C
+        - Stego_Character_BP_Corrupt_C
+        - Trike_Character_BP_Corrupt_C
+        - Wyvern_Character_BP_Fire_Corrupt_C
+        - Griffin_Character_BP_AE_C
+
+    dinoNameOverrides:
+        BaconOverlordCharacter_BP_C: Bacon Overlord
+        Elemental Fire  Owl: Elemental Fire Owl
+        Elemental Poison  Owl: Elemental Poison Owl
