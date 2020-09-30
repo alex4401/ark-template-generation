@@ -15,16 +15,17 @@ from .mwimpl import get_dv_compatible_key, prepare_object
 
 def run():
     obelisk_path = cli.get_path('obelisk', Path('data/obelisk'))
+    output_path = cli.get_path('output_path', Path('output/dv.json'))
     filter_path = cli.get_path('filter', Path('filters/dv_filter.yml'))
     flt = load_filter(filter_path)
     assert isinstance(flt, FilterDv)
-    main(flt, obelisk_path)
+    main(flt, obelisk_path, output_path)
 
 
 DataCollection = namedtuple('DataCollection', ('stats', 'extended'))
 
 
-def main(flt: FilterDv, obelisk_path: Path):
+def main(flt: FilterDv, obelisk_path: Path, output_path: Path):
     data = DataCollection(
         stats=load_json(obelisk_path / 'data/asb/values.json'),
         extended=load_json(obelisk_path / 'data/wiki/species.json'),
@@ -43,8 +44,13 @@ def main(flt: FilterDv, obelisk_path: Path):
                 dino1['extra'] = dino2
                 break
     species = data.stats['species']
+    for dino1 in species:
+        if 'extra' not in dino1:
+            bp1 = dino1['blueprintPath']
+            print(f'Zipping error: {bp1} does not have any extended data.')
+            dino1['extra'] = dict()
 
-    results = dict()
+    results: Dict[str, Dict[str, Any]] = dict()
     for dino_data in query(
             species,
             dict(where=lambda x: dino.should_skip(flt, x), equals=False),
@@ -58,10 +64,19 @@ def main(flt: FilterDv, obelisk_path: Path):
             if value != None:
                 out[field] = value
 
+        if lookup_key in results:
+            bp1 = results[lookup_key]['bp']
+            bp2 = out['bp']
+            message = f'Look-up key collision: {lookup_key}\n'
+            message += f'\tdino A:\t{bp1}\n'
+            message += f'\tdino B:\t{bp2}\n'
+            print(message)
+            continue
         results[lookup_key] = out
 
     packed = dict(
         version=game_version,
         species=results,  #prepare_object(results),
     )
-    print(format_json(packed, True))
+    output = format_json(packed, True)
+    output_path.write_text(output)

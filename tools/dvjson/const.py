@@ -6,7 +6,7 @@ DinoData = Dict[str, Any]
 ## CONSTANTS
 WHITELISTED_FIELDS = [
     'name',
-    'blueprintPath',
+    'bp',
     'fullStatsRaw',
     'breeding',
     'taming',
