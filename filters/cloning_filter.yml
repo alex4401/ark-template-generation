@@ -3,7 +3,7 @@ filter:
     includeCloningTimes: true
     prettifyOutput: true
 
-    dinoClasses:
+    includeDinoClasses:
     # Primal Earth
         - Allo_Character_BP_C
         - Raptor_Character_BP_C

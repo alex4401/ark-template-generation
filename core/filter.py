@@ -20,9 +20,10 @@ class Filter:
     modNameOverride: Optional[str] = None
 
     dinoNameOverrides: Dict[str, str] = dict()
-    dinoClasses: List[str] = list()
+    includeDinoClasses: List[str] = list()
     ignoreDinoClasses: List[str] = list()
     ignoreDinoBPs: List[str] = list()
+    ignoreDinosWithVariants: List[str] = list()
 
     skipMaps: List[str] = list()
     worldNameOverrides: Dict[str, str] = dict()

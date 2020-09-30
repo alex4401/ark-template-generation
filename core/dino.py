@@ -28,10 +28,24 @@ def should_skip(flt: Filter, blueprint: JsonData) -> bool:
     blueprint_path = get_path(blueprint)
     class_name = get_class_name(blueprint)
 
-    if any(blueprint_path.startswith(prefix) for prefix in flt.ignoreDinoBPs):
-        return True
-    if flt.ignoreDinoClasses and class_name in flt.ignoreDinoClasses:
-        return True
-    if not flt.ignoreDinoClasses and class_name not in flt.dinoClasses:
-        return True
+    # Branch off if the ignore options are used
+    if flt.ignoreDinoBPs or flt.ignoreDinoClasses or flt.ignoreDinosWithVariants:
+        # Force include a dino if it's in includeDinoClasses
+        if class_name in flt.includeDinoClasses:
+            return False
+
+        # Ignore it if it's listed on one of the lists
+        if class_name in flt.ignoreDinoClasses:
+            return True
+        elif any(
+                blueprint_path.startswith(prefix)
+                for prefix in flt.ignoreDinoBPs):
+            return True
+        elif any(variant in flt.ignoreDinosWithVariants
+                 for variant in blueprint.get('variants', [])):
+            return True
+    elif flt.includeDinoClasses:
+        if class_name not in flt.includeDinoClasses:
+            return True
+
     return False

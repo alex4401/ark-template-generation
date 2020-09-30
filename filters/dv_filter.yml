@@ -1,4 +1,9 @@
 namespace: DvJson
 filter:
-    dinoClasses:
-        - Raptor_Character_BP_C
+    ignoreDinosWithVariants:
+        - Escort
+        - Gauntlet
+        - Hunt
+        - Race
+        - Retrieve
+        - Sport
