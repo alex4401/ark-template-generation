@@ -28,8 +28,6 @@ class Filter:
     worldNameOverrides: Dict[str, str] = dict()
     worldNamesCSV: List[str] = list()
 
-    includeCloningTimes: bool = True
-    prettifyOutput: bool = False
     debugNames: bool = False
 
 

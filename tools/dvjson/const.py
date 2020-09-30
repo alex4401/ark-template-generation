@@ -8,5 +8,7 @@ WHITELISTED_FIELDS = [
     'name',
     'blueprintPath',
     'fullStatsRaw',
+    'breeding',
+    'taming',
     'colors',
 ]

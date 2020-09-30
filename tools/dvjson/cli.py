@@ -17,6 +17,7 @@ def run():
     obelisk_path = cli.get_path('obelisk', Path('data/obelisk'))
     filter_path = cli.get_path('filter', Path('filters/dv_filter.yml'))
     flt = load_filter(filter_path)
+    assert isinstance(flt, FilterDv)
     main(flt, obelisk_path)
 
 

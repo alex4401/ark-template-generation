@@ -1,3 +1,4 @@
+namespace: Cloning
 filter:
     includeCloningTimes: true
     prettifyOutput: true
