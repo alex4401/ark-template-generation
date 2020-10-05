@@ -74,7 +74,7 @@ def main(flt: Filter, mw_address: str, obelisk_path: Path, svg_path: Path,
                 t.update()
                 continue
 
-            found = svgs.list(mod, class_name, flt.modId)
+            found = svgs.list(mod, class_name[:-2], flt.modId)
             #if options.LinkAgainstMod:
             #    found = list(found)
             #    found += svgContext.list(mod, class_name, options.LinkAgainstMod)

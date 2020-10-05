@@ -10,3 +10,6 @@ filter:
         - /Game/Mods/Additions_Pack/Aberration
         - /Game/Mods/Additions_Pack/Extinction
         - /Game/Mods/Additions_Pack/Genesis
+    
+    dinoNameOverrides:
+        Scorched_Acrocanthosaurus_Character_BP_C: Scorched Acrocanthosaurus
