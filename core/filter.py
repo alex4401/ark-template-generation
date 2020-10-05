@@ -38,7 +38,8 @@ def load_filter(filename: str) -> Filter:
         # and all its parents.
         field_names = list(out.__annotations__.keys())
         for base in type(out).__bases__:
-            field_names += base.__annotations__.keys()
+            if getattr(base, '__annotations__', None):
+                field_names += base.__annotations__.keys()
 
         for field_name in field_names:
             field = source.get(field_name, None)
