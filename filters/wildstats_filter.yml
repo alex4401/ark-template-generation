@@ -1,5 +1,8 @@
+namespace: WildCreatureStats
 filter:
-    includeCloningTimes: true
+    linkMods:
+        - CrystalIsles
+    
     prettifyOutput: true
 
     includeDinoClasses:
@@ -391,7 +394,7 @@ filter:
         - LanternGoat_Character_BP_C
         - Xenomorph_Character_BP_Male_Chupa_C
         - Xenomorph_Character_BP_Male_Surface_C
-    
+        
     dinoNameOverrides:
         CrystalWyvern_Character_BP_WS_C: Crystal Wyvern
         Wyvern_Character_BP_Fire_C: Wyvern
