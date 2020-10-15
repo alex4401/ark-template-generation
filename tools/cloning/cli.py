@@ -38,12 +38,12 @@ def main(flt: FilterCloning, obelisk_path: Path):
     species = species['species']
     species.sort(key=sort_dinos_by_name(flt))
 
-    if flt.dinoClasses:
+    if flt.includeDinoClasses:
         validate(species,
-                 contains_range=flt.dinoClasses,
+                 contains_range=flt.includeDinoClasses,
                  of=blueprint.get_class_name)
         conditions = [
-            dict(where=blueprint.get_class_name, contained_in=flt.dinoClasses)
+            dict(where=blueprint.get_class_name, contained_in=flt.includeDinoClasses)
         ]
     else:
         conditions = [
