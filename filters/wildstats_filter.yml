@@ -2,7 +2,6 @@ namespace: WildCreatureStats
 filter:
     linkMods:
         - CrystalIsles
-    
     prettifyOutput: true
 
     includeDinoClasses:
@@ -82,6 +81,9 @@ filter:
         - Troodon_Character_BP_C
         - Thylacoleo_Character_BP_C
         - Therizino_Character_BP_C
+
+    # Aberration
+        # Aberrants
         - Coel_Character_BP_Aberrant_C
         - Achatina_Character_BP_Aberrant_C
         - Angler_Character_BP_Aberrant_C
@@ -153,7 +155,7 @@ filter:
         - Basilosaurus_Character_BP_C
         - Toad_Character_BP_C
         - VRMainBoss_Character_Medium_C
-        - KingKaiju_Character_BP_Beta
+        - KingKaiju_Character_BP_Beta_C
         - EelBoss_Character_BP_Medium_C
         - BogSpider_Character_BP_C
         - Sauropod_Character_BP_C
@@ -183,8 +185,6 @@ filter:
         - Volcano_Golem_Character_BP_Hunt_C
         - Volcano_Rex_Character_BP_Hunt_C
         - Wyvern_Character_BP_Fire_GauntletBoss_C
-        - Xenomorph_Character_BP_Male_InitialBuryOnly_Brute_Retrieve_C
-        - Xenomorph_Character_BP_Male_InitialBuryOnly_Hunt_C
         - Turtle_Character_BP_C
         - Carno_Character_BP_C
         - Beaver_Character_BP_C
@@ -285,7 +285,6 @@ filter:
         - Mammoth_Character_BP_C
         - IceJumper_Character_BP_C
         - Manta_Character_BP_C
-        - MegaMek_Character_BP_C
         - GiantTurtle_Character_BP_C
         - Megalania_Character_BP_C
         - Stag_Character_BP_C
@@ -296,7 +295,6 @@ filter:
         - Gorilla_Character_BP_Medium_C
         - Gorilla_Character_BP_Easy_C
         - Megatherium_Character_BP_C
-        - Mek_Character_BP_C
         - Monkey_Character_BP_C
         - Microraptor_Character_BP_C
         - Mosa_Character_BP_C
@@ -326,7 +324,6 @@ filter:
         - Purlovia_Character_BP_Polar_C
         - Quetz_Character_BP_C
         - Raptor_Character_BP_C
-        - Xenomorph_Character_BP_Male_InitialBuryOnly_Adolescent_C
         - Rex_Character_BP_C
         - Saber_Character_BP_C
         - Salmon_Character_BP_C
@@ -353,6 +350,7 @@ filter:
         - Rhino_Character_BP_C
         - Yeti_Character_BP_C
         - Yutyrannus_Character_BP_C
+    # Scorched Earth
         - MegaDeathworm_Character_BP_C
         - MegaWyvern_Character_BP_Fire_C
         - Deathworm_Character_BP_C
@@ -364,7 +362,7 @@ filter:
         - Manticore_Character_BP_Medium_C
         - Manticore_Character_BP_Easy_C
         - Mantis_Character_BP_C
-        - Camelsaurus_Character_BP_C
+        - camelsaurus_Character_BP_C
         - Phoenix_Character_BP_C
         - RockGolem_Character_BP_C
         - RubbleGolem_Character_BP_C
@@ -383,7 +381,6 @@ filter:
         - Lamprey_Character_C
         - ChupaCabra_Character_BP_C
         - CaveWolf_Character_BP_C
-        - Xenomorph_Character_BP_Male_Tamed_C
         - Xenomorph_Character_BP_Female_C
         - RockDrake_Character_BP_C
         - Rockwell_Character_BP_Hard_C
