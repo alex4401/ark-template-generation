@@ -405,3 +405,16 @@ filter:
         CrystalWyvern_Character_BP_WS_C: Crystal Wyvern
         Wyvern_Character_BP_Fire_C: Wyvern
         Shapeshifter_Large_Character_BP_C: Ferox (Large)
+        Coel_Character_BP_Aberrant_C: Abberant Coelacanth
+        EndDrone_Character_BP_C: Attack Drone
+        EndTank_Character_BP_C: Defense Unit
+        KingKaiju_Character_BP_Alpha_C: Alpha King Titan
+        KingKaiju_Character_BP_Beta_C: Beta King Titan
+        KingKaiju_Character_BP_C: Gamma King Titan
+        EelMinion_Character_BP_Easy_C: Eel Minion
+        EelBoss_Character_BP_Hard_C: Alpha Moeder, Master of the Ocean
+        EelBoss_Character_BP_Medium: Beta Moeder, Master of the Ocean
+        EelBoss_Character_BP_Easy: Gamma Moeder, Master of the Ocean
+        VRMainBoss_Character_Hard_C: Alpha Corrupted Master Controller
+        VRMainBoss_Character_Medium_C: Beta Corrupted Master Controller
+        VRMainBoss_Character_Easy_C: Gamma Corrupted Master Controller
