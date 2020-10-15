@@ -3,7 +3,16 @@ filter:
     linkMods:
         - CrystalIsles
     prettifyOutput: true
+    displayVariants:
+        Gamma:
+        Beta:
+        Alpha:
 
+    ignoreDinoBPs:
+        # Valguero has some bad duplicates of The Island bosses, skip them.
+        - /Game/Mods/Valguero/Assets/CoreBlueprints/Boss
+        # ...and a bad clone of Ragnarok's Ice Worm.
+        - /Game/Mods/Valguero/Assets/Dinos/IceWorm
     includeDinoClasses:
     # Primal Earth
         - Allo_Character_BP_C
@@ -395,3 +404,4 @@ filter:
     dinoNameOverrides:
         CrystalWyvern_Character_BP_WS_C: Crystal Wyvern
         Wyvern_Character_BP_Fire_C: Wyvern
+        Shapeshifter_Large_Character_BP_C: Ferox (Large)

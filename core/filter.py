@@ -19,6 +19,7 @@ class Filter:
     modId: str = CORE_GAME
     modNameOverride: Optional[str] = None
 
+    displayVariants: Dict[str, str] = dict()
     dinoNameOverrides: Dict[str, str] = dict()
     includeDinoClasses: List[str] = list()
     ignoreDinoClasses: List[str] = list()
