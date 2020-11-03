@@ -20,7 +20,9 @@ class Filter:
     modNameOverride: Optional[str] = None
 
     displayVariants: Dict[str, str] = dict()
+
     dinoNameOverrides: Dict[str, str] = dict()
+    matchRegex: Dict[str, str] = dict()
     includeDinoClasses: List[str] = list()
     ignoreDinoClasses: List[str] = list()
     ignoreDinoBPs: List[str] = list()

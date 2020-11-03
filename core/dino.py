@@ -1,7 +1,9 @@
+import re
+from typing import Optional
+
 from .blueprint import get_class_name, get_path
 from .file import JsonData
 from .filter import Filter
-from typing import Optional
 
 
 def get_descriptive_name(flt: Optional[Filter], blueprint: JsonData) -> str:
@@ -36,6 +38,13 @@ def get_descriptive_name(flt: Optional[Filter], blueprint: JsonData) -> str:
 def should_skip(flt: Filter, blueprint: JsonData) -> bool:
     blueprint_path = get_path(blueprint)
     class_name = get_class_name(blueprint)
+    name = get_descriptive_name(flt, blueprint)
+
+    # Execute custom regex checks if any are given
+    if flt.matchRegex:
+      re_name = flt.matchRegex.get('name', None)
+      if re_name and not re.match(re_name, name):
+          return True
 
     # Check if dino is in the ignore list.
     if flt.ignoreDinoBPs and any(
