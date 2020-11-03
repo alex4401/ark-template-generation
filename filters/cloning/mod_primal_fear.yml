@@ -1,10 +1,10 @@
 namespace: Cloning
 filter:
+    modId: '839162288'
+    
     includeCloningTimes: true
     prettifyOutput: true
     debugNames: true
-
-    modId: '839162288'
 
     ignoreDinoBPs:
     # Ignore dinos that are possibly copies from the core game.
