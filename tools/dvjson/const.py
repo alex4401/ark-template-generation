@@ -7,8 +7,5 @@ DinoData = Dict[str, Any]
 WHITELISTED_FIELDS = [
     'name',
     'bp',
-    'fullStatsRaw',
     'breeding',
-    'taming',
-    'colors',
 ]

@@ -2,16 +2,22 @@ import re
 from .filter_ext import FilterDv
 from typing import Dict, Any
 from core.dino import get_descriptive_name
+from core.blueprint import get_class_name
 
 R_NON_WORD = r'[^\w]'
 
 
 def get_dv_compatible_key(flt: FilterDv, dino: Dict[str, Any]):
-    name = get_descriptive_name(flt, dino)
-    if name in flt.idOverrides:
-        return flt.idOverrides[name]
+    class_name = get_class_name(dino)
+    desc_name = get_descriptive_name(flt, dino)
+    
+    if class_name in flt.idOverrides:
+        return flt.idOverrides[class_name]
+    
+    if desc_name in flt.idOverrides:
+        return flt.idOverrides[desc_name]
 
-    return re.sub(R_NON_WORD, '', name).lower()
+    return re.sub(R_NON_WORD, '', desc_name).lower()
 
 
 def prepare_object(node):
