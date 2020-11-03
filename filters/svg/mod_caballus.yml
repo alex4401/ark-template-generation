@@ -1,4 +1,4 @@
-import: filters/svg_filter_global.yml
+import: filters/svg/global.yml
 filter:
     modId: '1679826889'
 

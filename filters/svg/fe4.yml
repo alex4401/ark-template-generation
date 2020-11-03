@@ -1,0 +1,7 @@
+import: filters/svg/global.yml
+filter:
+  matchRegex:
+    name: (.*)(Zombie|Zomdodo|Skeletal|Ghost)(.*)
+
+  dinoNameOverrides:
+    Bone_Jerboa_Character_BP_C: Skeletal Jerboa
