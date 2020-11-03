@@ -1,5 +1,7 @@
 import yaml
-from typing import List, Dict, Optional, Type
+import copy
+from typing import List, Dict, Optional, Type, Any
+
 from .const import CORE_GAME
 
 _FILTERS_: Dict[str, Type] = dict()
@@ -13,8 +15,45 @@ def namespace(name):
     return _ns_filter_
 
 
+class Deserializable:
+    def __init__(self):
+        for field_name in self.get_fields():
+            value = getattr(self, field_name, None)
+            if value:
+                setattr(self, field_name, copy.deepcopy(value))
+
+    def get_fields(self):
+        # Yields all type annotations from this object.
+        yield from self.__annotations__.keys()
+
+        for base in type(self).__bases__:
+            if getattr(base, '__annotations__', None):
+                yield from base.__annotations__.keys()
+
+    def update(self, source: Dict[str, Any], override=False):
+        for field_name in self.get_fields():
+            field = source.get(field_name, None)
+
+            if field != None:
+                existing = getattr(self, field_name, None)
+                if not override and existing:
+                    # Pass data to a Deserializable object
+                    if isinstance(existing, Deserializable):
+                        existing.update(field, override)
+                    # Join lists and dicts
+                    elif isinstance(existing, list):
+                        existing += field
+                        continue
+                    elif isinstance(existing, dict):
+                        existing = {**existing, **field}
+                        continue
+
+                # Set field list
+                setattr(self, field_name, field)
+
+
 @namespace('default')
-class Filter:
+class Filter(Deserializable):
     path: str
     modId: str = CORE_GAME
     modNameOverride: Optional[str] = None
@@ -36,31 +75,6 @@ class Filter:
 
 
 def load_filter(filename: str) -> Filter:
-    def _set_fields(source, override=False):
-        # Get all type annotations from the filter class
-        # and all its parents.
-        field_names = list(out.__annotations__.keys())
-        for base in type(out).__bases__:
-            if getattr(base, '__annotations__', None):
-                field_names += base.__annotations__.keys()
-
-        for field_name in field_names:
-            field = source.get(field_name, None)
-
-            if field != None:
-                existing = getattr(out, field_name, None)
-                if not override and existing:
-                    # Join lists and dicts
-                    if isinstance(existing, list):
-                        existing += field
-                        continue
-                    elif isinstance(existing, dict):
-                        existing = {**existing, **field}
-                        continue
-
-                # Set field list
-                setattr(out, field_name, field)
-
     with open(filename, 'rt') as fp:
         doc = yaml.safe_load(fp)
 
@@ -75,8 +89,10 @@ def load_filter(filename: str) -> Filter:
 
     flt_data = doc['filter']
     out.path = filename
-    _set_fields(flt_data)
-    if 'override' in flt_data:
-        _set_fields(flt_data['override'], True)
+    out.update(flt_data)
+
+    overrides = doc.get('overrides', None)
+    if overrides:
+        out.update(overrides, override=True)
 
     return out
