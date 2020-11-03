@@ -1,11 +1,12 @@
 namespace: DvJson
 filter:
-    includeDinoClasses:
+  selectors:
+    includeClasses:
       - Allo_Character_BP_C
       - Raptor_Character_BP_C
       - Bog_Raptor_Character_BP_C
       - Shapeshifter_Small_Character_BP_C
       - Shapeshifter_Large_Character_BP_C
     
-    idOverrides:
-      Shapeshifter_Large_Character_BP_C: feroxlarge
+  idOverrides:
+    Shapeshifter_Large_Character_BP_C: feroxlarge

@@ -1,0 +1,18 @@
+namespace: default
+filter:
+  selectors:
+    includeBPs:
+      - /Game:
+        - /Genesis/Dinos:
+          - /BiomeVariants:
+            - /Lunar_Salmon/Rare_Lunar_Salmon_Character_BP
+            - /Snow_Argentavis
+            - /VR:
+              - VRDaeodon_Character_BP
+              - VREndDrone_Character_BP
+              - VRGigant_Character_BP
+              - VRRaptor_Character_BP
+              - VRRex_Character_BP
+              - VRTrike_Character_BP
+              - VRXenomorph_Character_BP_Male_Minion
+              - VRYutyrannus_Character_BP

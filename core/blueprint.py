@@ -5,10 +5,14 @@ from .file import JsonData
 EXT_BP_CLASS = 'x-bp-class'
 
 
-def get_path(blueprint: JsonData) -> str:
+def get_path(blueprint: JsonData, no_class=False) -> str:
     out = blueprint.get('bp', None)
     if not out:
         out = blueprint['blueprintPath']
+
+    if no_class:
+        out = out[:out.index('.')]
+
     return out
 
 

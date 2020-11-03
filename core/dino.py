@@ -36,36 +36,37 @@ def get_descriptive_name(flt: Optional[Filter], blueprint: JsonData) -> str:
 
 
 def should_skip(flt: Filter, blueprint: JsonData) -> bool:
-    blueprint_path = get_path(blueprint)
+    blueprint_path = get_path(blueprint, no_class=True)
     class_name = get_class_name(blueprint)
     name = get_descriptive_name(flt, blueprint)
+    selectors = flt.selectors
 
     # Execute custom regex checks if any are given
-    if flt.matchRegex:
-      re_name = flt.matchRegex.get('name', None)
-      if re_name and not re.match(re_name, name):
-          return True
+    if selectors.matchRegex:
+        re_name = selectors.matchRegex.get('name', None)
+        if re_name and not re.match(re_name, name):
+            return True
 
     # Check if dino is in the ignore list.
-    if flt.ignoreDinoBPs and any(
-        blueprint_path.startswith(prefix)
-        for prefix in flt.ignoreDinoBPs):
+    if blueprint_path in selectors.ignoreBPs:
         return True
 
     # Branch off if the ignore options are used
-    if flt.ignoreDinoClasses or flt.ignoreDinosWithVariants:
+    if selectors.ignoreClasses or selectors.ignoreVariants:
         # Force include a dino if it's in includeDinoClasses
-        if class_name in flt.includeDinoClasses:
+        if class_name in selectors.includeClasses:
             return False
 
         # Ignore it if it's listed on one of the lists
-        if class_name in flt.ignoreDinoClasses:
+        if class_name in selectors.ignoreClasses:
             return True
-        elif any(variant in flt.ignoreDinosWithVariants
+        elif any(variant in selectors.ignoreVariants
                  for variant in blueprint.get('variants', [])):
             return True
-    elif flt.includeDinoClasses:
-        if class_name not in flt.includeDinoClasses:
+    elif selectors.includeBPs.values and blueprint_path not in selectors.includeBPs:
+        return True
+    elif selectors.includeClasses:
+        if class_name not in selectors.includeClasses:
             return True
 
     return False
